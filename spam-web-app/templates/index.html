@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spam Detector</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    input[type="text"] {
+      width: 90%;
+      padding: 15px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: none;
+      margin-top: 10px;
+      outline: none;
+    }
+
+    button {
+      background: #00c6ff;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      border: none;
+      color: white;
+      font-size: 1rem;
+      padding: 12px 30px;
+      margin-top: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(0, 114, 255, 0.4);
+    }
+
+    .result {
+      margin-top: 25px;
+      font-size: 1.5rem;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .msg-preview {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>⚡ Spam Classifier</h1>
+    <form method="POST">
+      <input type="text" name="message" placeholder="Enter a message..." value="{{ message }}" required>
+      <br>
+      <button type="submit">Check</button>
+    </form>
+
+    {% if prediction %}
+      <div class="result">{{ prediction }}</div>
+      <div class="msg-preview">You entered: "{{ message }}"</div>
+    {% endif %}
+  </div>
+</body>
+</html>
