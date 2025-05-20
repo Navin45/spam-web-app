@@ -60,8 +60,8 @@ plt.show()
 
 
 # Save model and vectorizer
-joblib.dump(model, "spam_classifier_model.pkl")
-joblib.dump(cv, "count_vectorizer.pkl")
+joblib.dump(model, "../spam_classifier_model.pkl")
+joblib.dump(cv, "../count_vectorizer.pkl")
 
 print(" Model and vectorizer saved successfully.")
 

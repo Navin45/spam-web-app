@@ -1,8 +1,8 @@
 import joblib
 
 # Load model and vectorizer
-model = joblib.load("spam_classifier_model.pkl")
-cv = joblib.load("count_vectorizer.pkl")
+model = joblib.load("../spam_classifier_model.pkl")
+cv = joblib.load("../count_vectorizer.pkl")
 
 # Test with custom messages
 custom_messages = [
